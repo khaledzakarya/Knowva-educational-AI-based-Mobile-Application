@@ -9,6 +9,7 @@ import { Role, User } from 'generated/prisma';
 import { LoginDto } from './dto/login.dto';
 import otpGenerator from "otp-generator";
 import { MailService } from 'src/mail/mail.service';
+import { LoginResponse, RegisterResponse } from 'src/helper/interfaces/interfaces.response';
 @Injectable()
 export class AuthService {
 
@@ -77,7 +78,7 @@ export class AuthService {
   }
    
 
-  async forgetPassword(email: string) {
+  async forgetPassword(email: string) : Promise<{ message: string }> {
     const user = await this.prisma.user.findUnique({ where: { email } });
     if (!user) throw new NotFoundException('User not found');
     const otp = this.generateOtp();
@@ -105,7 +106,7 @@ export class AuthService {
 
   }
 
-  async verifyOtp(email: string, otp: string) {
+  async verifyOtp(email: string, otp: string) : Promise<{ message: string }> {
     const user = await this.prisma.user.findUnique({ where: { email } });
     if (!user) throw new NotFoundException('User not found');
     const otpToken = await this.prisma.otpToken.findFirst({

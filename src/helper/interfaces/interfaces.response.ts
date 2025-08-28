@@ -24,3 +24,5 @@ interface UpdateProfileResponse {
   role: string;
   token: string;
 }
+
+export { LoginResponse, RegisterResponse, UpdateProfileResponse };
