@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateAuthDto } from './dto/create-auth.dto';
 import { UpdateAuthDto } from './dto/update-auth.dto';
 import { PrismaService } from 'src/database/prisma.service';
@@ -7,9 +7,9 @@ import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
 import { Role, User } from 'generated/prisma';
 import { LoginDto } from './dto/login.dto';
-import otpGenerator from "otp-generator";
+const otpGenerator = require('otp-generator')
 import { MailService } from 'src/mail/mail.service';
-import { LoginResponse, RegisterResponse } from 'src/helper/interfaces/interfaces.response';
+import { LoginResponse, RegisterResponse, UpdateProfileResponse } from 'src/helper/interfaces/interfaces.response';
 @Injectable()
 export class AuthService {
 
@@ -24,6 +24,9 @@ export class AuthService {
     });
     if (useremail) {
       throw new Error('Email already exists');
+    }
+    if(createAuthDto.password !== createAuthDto.confirmPassword){
+      throw new BadRequestException('Password does not match');
     }
     const hashedPassword = await this.hashPassword(createAuthDto.password);
     let role: Role;
@@ -59,11 +62,11 @@ export class AuthService {
       }
     });
     if (!user) {
-      throw new Error('User not found');
+      throw new NotFoundException('User not found');
     }
     const isMatch = await this.comparePassword(loginDto.password, user.password);
     if (!isMatch) {
-      throw new Error('Invalid password');
+      throw new BadRequestException('Invalid password');
     }
     const token = await this.generateJwt({ id: user.id, role: user.role });
     return {
@@ -127,12 +130,67 @@ export class AuthService {
     return { message: 'OTP verified successfully' };
   }
 
-  update(id: number, updateAuthDto: UpdateAuthDto) {
-    return `This action updates a #${id} auth`;
+  async getProfile(id: number) {
+    const user = await this.prisma.user.findUnique({
+      where: {
+        id: id
+      }
+    });
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+    return {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      role: user.role
+    };
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} auth`;
+  async update(id: number, updateAuthDto: UpdateAuthDto): Promise<UpdateProfileResponse> {
+    const user = await this.prisma.user.findUnique({
+      where: {
+        id: id
+      }
+    });
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+    let updatedData: Partial<User> = { ...updateAuthDto };
+    if (updateAuthDto.password) {
+      updatedData.password = await this.hashPassword(updateAuthDto.password);
+    }
+    const updatedUser = await this.prisma.user.update({
+      where: {
+        id: id
+      },
+      data: updatedData
+    });
+    const token = await this.generateJwt({ id: updatedUser.id, role: updatedUser.role });
+    return {
+      id: updatedUser.id,
+      name: updatedUser.name,
+      email: updatedUser.email,
+      role: updatedUser.role,
+      token
+    };
+  }
+
+  async remove(id: number) {
+    const user = await this.prisma.user.findUnique({
+      where: {
+        id: id
+      }
+    });
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+    await this.prisma.user.delete({
+      where: {
+        id: id
+      }
+    });
+    return { message: 'User deleted successfully' };
   }
 
   async hashPassword(password: string): Promise<string> {
@@ -154,7 +212,8 @@ export class AuthService {
   }
 
   private generateOtp(): string {
-    const otp = otpGenerator.generate(5, { upperCaseAlphabets: false, specialChars: false, lowerCaseAlphabets: false });
-    return otp;
+    const otp = Math.floor(1000 + Math.random() * 9000).toString();
+      console.log(otp); // e.g., "5732"
+      return otp;
   }
 }
