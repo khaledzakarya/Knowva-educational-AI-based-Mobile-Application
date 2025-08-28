@@ -1,1 +1,25 @@
-{}
+{
+  "@@locale": "en",
+  "onboardingTitle1": "Welcome to Knowva",
+  "onboardingDescription1": "Smart teaching starts here save time, teach better, and engage your students like never before.",
+  "onboardingTitle2": "Personalized Learning",
+  "onboardingDescription2": "Help every student succeed with targeted feedback and adaptive learning recommendations.",
+  "onboardingTitle3": "Ready to Transform Your Classroom?",
+  "onboardingDescription3": "Join Knowva today and experience the future of teaching.",
+  "button_next": "Next",
+  "button_start": "Start now",
+  "skip": "Skip",
+  "language_en": "EN",
+  "language_ar": "AR",
+  "login_title": "Welcome Back!",
+  "login_subtitle": "Smart teaching starts here.",
+  "login_button": "Log in",
+  "login_forgot_password": "Forgot password?",
+  "login_create_account": "Don't have an account?",
+  "signup": "Sign up",
+  "remember_me": "Remember me",
+  "email": "Email address",
+  "password": "Password",
+  "confirm_password": "Confirm Password",
+  "or_sign_in_with":"Or Sign in with"
+}

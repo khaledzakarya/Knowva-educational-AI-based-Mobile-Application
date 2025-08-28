@@ -19,8 +19,8 @@ class MyBottomSheetTheme {
 
   static const darkBottomSheetTheme = BottomSheetThemeData(
     showDragHandle: true,
-    backgroundColor:MyColors.black,
-    modalBackgroundColor:MyColors.black,
+    backgroundColor:MyColors.darker,
+    modalBackgroundColor:MyColors.darker,
     constraints: BoxConstraints(minWidth: double.infinity),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.only(

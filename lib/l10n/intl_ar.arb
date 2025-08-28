@@ -1,1 +1,25 @@
-{}
+{
+    "@@locale": "ar",
+    "onboardingTitle1": "مرحبًا بك في Knowva",
+    "onboardingDescription1": "التدريس الذكي يبدأ من هنا،وفر وقتك، طوّر دروسك، وشارك طلابك كما لم يحدث من قبل.",
+    "onboardingTitle2": "تعلم مخصص لكل طالب",
+    "onboardingDescription2": "ساعد كل طالب على النجاح من خلال تغذية راجعة موجهة وتوصيات تعليمية متكيفة.",
+    "onboardingTitle3": "مستعد لتطوير فصلك الدراسي؟",
+    "onboardingDescription3": "انضم إلى Knowva اليوم واكتشف مستقبل التعليم.",
+    "button_next": "التالي",
+    "button_start": "ابدأ الآن",
+    "skip": "تخطي",
+    "language_en": "En",
+    "language_ar": "Ar",
+    "login_title": "مرحبًا بعودتك!",
+    "login_subtitle": "التدريس الذكي يبدأ من هنا.",
+    "login_button": "تسجيل الدخول",
+    "login_forgot_password": "نسيت كلمة المرور؟",
+    "login_create_account": "لا تملك حسابًا؟",
+    "signup": "سجل الآن",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirm_password": "تأكيد كلمة المرور",
+    "remember_me": "تذكرني",
+    "or_sign_in_with":"سجل الدخول مع"
+}

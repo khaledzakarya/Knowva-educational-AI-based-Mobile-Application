@@ -16,7 +16,7 @@ class MyCheckboxTheme {
       }),
       fillColor: WidgetStateProperty.resolveWith((states) {
         if (states.contains(WidgetState.selected)) {
-          return MyColors.primaryColor;
+          return MyColors.secondaryColor;
         }
         return Colors.transparent;
       }));
@@ -33,7 +33,7 @@ class MyCheckboxTheme {
       }),
       fillColor: WidgetStateProperty.resolveWith((states) {
         if (states.contains(WidgetState.selected)) {
-          return MyColors.primaryColor;
+          return MyColors.secondaryColor;
         }
         return Colors.transparent;
       }));

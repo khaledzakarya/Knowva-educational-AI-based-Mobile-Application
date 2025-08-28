@@ -1,19 +1,36 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:knowva/core/enums/device_type.dart';
 
 DeviceType getDeviceType(MediaQueryData mediaQueryData) {
-  double width = 0;
-  final oriantation = mediaQueryData.orientation;
-  if (oriantation == Orientation.landscape) {
-    width = mediaQueryData.size.height;
-  } else {
-    width = mediaQueryData.size.width;
+  final Size size = mediaQueryData.size;
+  final double width = size.width;
+  final double height = size.height;
+
+  // Phones: typically <600px width
+  if (width < 600 && height < 1000) {
+    return DeviceType.phone;
   }
-  if (width < 600) {
-    return DeviceType.mobile;
-  } else if (width < 1024) {
+
+  // Small tablets (portrait): width between 600–904
+  if (width >= 600 && width < 905 && height >= 960) {
     return DeviceType.tablet;
-  } else {
+  }
+
+  // Large tablets (landscape): width between 905–1239
+  if (width >= 905 && width < 1240 && height >= 600) {
+    return DeviceType.tablet;
+  }
+
+  // Small desktop / laptops
+  if (width >= 1240 && width < 1440) {
     return DeviceType.desktop;
   }
+
+  // Large desktops
+  if (width >= 1440) {
+    return DeviceType.desktop;
+  }
+
+  // Fallback
+  return DeviceType.phone;
 }
