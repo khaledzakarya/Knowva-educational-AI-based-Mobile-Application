@@ -5,6 +5,8 @@ import { AuthModule } from './auth/auth.module';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MailModule } from './mail/mail.module';
+import { SubjectModule } from './subject/subject.module';
+import { GroupModule } from './group/group.module';
 import config from './helper/config';
 @Module({
   imports: [AuthModule,
@@ -25,7 +27,9 @@ import config from './helper/config';
       }),
       inject: [ConfigService],
     }),
-    MailModule
+    MailModule,
+    SubjectModule,
+    GroupModule
   ],
   controllers: [AppController],
   providers: [AppService],

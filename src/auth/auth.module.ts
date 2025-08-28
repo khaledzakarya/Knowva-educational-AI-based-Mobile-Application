@@ -10,6 +10,7 @@ import { MailModule } from 'src/mail/mail.module';
 @Module({
   controllers: [AuthController],
   providers: [AuthService , PrismaService],
+  exports :[AuthService],
   imports: [
    JwtModule.registerAsync({
       imports: [ConfigModule],

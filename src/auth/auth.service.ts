@@ -13,9 +13,16 @@ import { LoginResponse, RegisterResponse, UpdateProfileResponse } from 'src/help
 @Injectable()
 export class AuthService {
 
-  constructor(private prisma: PrismaService, private jwtService: JwtService, private configService: ConfigService ,
+  constructor(private prisma: PrismaService, private jwtService: JwtService, private configService: ConfigService,
     private readonly mailService: MailService
   ) { }
+
+  /**
+   * @description Create a new user
+   * @method create
+   * @param createAuthDto 
+   * @returns RegisterResponse
+   */
   async create(createAuthDto: CreateAuthDto): Promise<RegisterResponse> {
     const useremail = await this.prisma.user.findUnique({
       where: {
@@ -25,7 +32,7 @@ export class AuthService {
     if (useremail) {
       throw new Error('Email already exists');
     }
-    if(createAuthDto.password !== createAuthDto.confirmPassword){
+    if (createAuthDto.password !== createAuthDto.confirmPassword) {
       throw new BadRequestException('Password does not match');
     }
     const hashedPassword = await this.hashPassword(createAuthDto.password);
@@ -55,6 +62,12 @@ export class AuthService {
 
   }
 
+  /**
+   * @description Login a user
+   * @method get
+   * @param loginDto 
+   * @returns LoginResponse
+   */
   async login(loginDto: LoginDto): Promise<LoginResponse> {
     const user = await this.prisma.user.findUnique({
       where: {
@@ -79,9 +92,13 @@ export class AuthService {
       }
     }
   }
-   
 
-  async forgetPassword(email: string) : Promise<{ message: string }> {
+  /**
+   * @description Forget password - generate OTP and send to email
+   * @param email 
+   * @returns { message: string }
+   */
+  async forgetPassword(email: string): Promise<{ message: string }> {
     const user = await this.prisma.user.findUnique({ where: { email } });
     if (!user) throw new NotFoundException('User not found');
     const otp = this.generateOtp();
@@ -109,7 +126,14 @@ export class AuthService {
 
   }
 
-  async verifyOtp(email: string, otp: string) : Promise<{ message: string }> {
+  /**
+   * 
+   * @param email 
+   * @description Verify OTP
+   * @param otp 
+   * @returns { message: string }
+   */
+  async verifyOtp(email: string, otp: string): Promise<{ message: string }> {
     const user = await this.prisma.user.findUnique({ where: { email } });
     if (!user) throw new NotFoundException('User not found');
     const otpToken = await this.prisma.otpToken.findFirst({
@@ -130,6 +154,12 @@ export class AuthService {
     return { message: 'OTP verified successfully' };
   }
 
+  /**
+   * 
+   * @param id 
+   * @description Get user profile
+   * @returns { id, name, email, role }
+   */
   async getProfile(id: number) {
     const user = await this.prisma.user.findUnique({
       where: {
@@ -146,6 +176,14 @@ export class AuthService {
       role: user.role
     };
   }
+
+  /**
+   * 
+   * @param id 
+   * @description Update user profile
+   * @param updateAuthDto 
+   * @returns UpdateProfileResponse
+   */
 
   async update(id: number, updateAuthDto: UpdateAuthDto): Promise<UpdateProfileResponse> {
     const user = await this.prisma.user.findUnique({
@@ -175,6 +213,15 @@ export class AuthService {
       token
     };
   }
+
+  /**
+   * 
+   * @param id 
+   * @description Delete user
+   * @param updateAuthDto
+   * @returns { message: string }
+   *  
+   */
 
   async remove(id: number) {
     const user = await this.prisma.user.findUnique({
@@ -213,7 +260,7 @@ export class AuthService {
 
   private generateOtp(): string {
     const otp = Math.floor(1000 + Math.random() * 9000).toString();
-      console.log(otp); // e.g., "5732"
-      return otp;
+    console.log(otp); // e.g., "5732"
+    return otp;
   }
 }

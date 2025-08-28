@@ -1,6 +1,8 @@
 
 import { SetMetadata } from '@nestjs/common';
-import { Role } from '../enums/roles';
+import { Role } from 'generated/prisma/client';
+
+
 
 
 
