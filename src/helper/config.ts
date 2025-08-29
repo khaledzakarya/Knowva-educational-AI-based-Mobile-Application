@@ -5,5 +5,5 @@ export default () => ({
   },
   jwtSecret: process.env.JWT_SECRET,
   accessTeacher: process.env.TEACHER_TOKEN ,
-  accessStudent: process.env.STUDENT_TOKEN ,
+  
 });

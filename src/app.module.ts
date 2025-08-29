@@ -7,6 +7,9 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MailModule } from './mail/mail.module';
 import { SubjectModule } from './subject/subject.module';
 import { GroupModule } from './group/group.module';
+import { EnrollmentModule } from './enrollment/enrollment.module';
+import { LessonModule } from './lesson/lesson.module';
+
 import config from './helper/config';
 @Module({
   imports: [AuthModule,
@@ -29,7 +32,9 @@ import config from './helper/config';
     }),
     MailModule,
     SubjectModule,
-    GroupModule
+    GroupModule,
+    EnrollmentModule,
+    LessonModule,
   ],
   controllers: [AppController],
   providers: [AppService],

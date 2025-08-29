@@ -1,8 +1,8 @@
-import { IsOptional, IsString } from "class-validator";
-import { IsNotEmpty } from "class-validator/types/decorator/common/IsNotEmpty";
+import {  IsNotEmpty, IsOptional, IsString } from "class-validator";
+
 
 export class CreateSubjectDto {
-    @IsNotEmpty({message : "Name should not be empty"})
+    @IsNotEmpty({message : "Name is required"})
     @IsString({message : "Name must be a string"})
     title: string;
     
