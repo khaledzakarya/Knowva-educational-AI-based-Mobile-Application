@@ -89,6 +89,8 @@ model Lesson {
   type      LessonType
   title     String
   url       String
+  publicId  String
+  createdAt DateTime @default(now())
   subject   Subject  @relation(fields: [subjectId], references: [id])
   subjectId Int
 }
