@@ -88,7 +88,14 @@ export class EnrollmentService {
         id: id
       },
       data: {
-        status: Status.APPROVED
+        status: Status.APPROVED,
+        group: {
+          update: {
+            capacity: {
+              decrement: 1
+            }
+          }
+        }
       }
     });
  
