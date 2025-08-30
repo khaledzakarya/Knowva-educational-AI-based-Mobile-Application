@@ -1,0 +1,1 @@
+Knowva is an educational Ai based Mobile Application
