@@ -20,6 +20,14 @@ export class EnrollmentService {
       }
     });
     if(!group) throw new BadRequestException("Group not found");
+    if(group.capacity <= 0) throw new BadRequestException("Group is full");
+    let existingEnrollment = await this.prisma.membership.findFirst({
+      where: {
+        groupId: groupId,
+        studentId: userId
+      }
+    });
+    if(existingEnrollment) throw new BadRequestException("User is already enrolled in this group");
     
     let enrollment = await this.prisma.membership.create({
       data: {
