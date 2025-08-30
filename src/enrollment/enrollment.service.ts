@@ -3,11 +3,15 @@ import { CreateEnrollmentDto } from './dto/create-enrollment.dto';
 import { UpdateEnrollmentDto } from './dto/update-enrollment.dto';
 import { PrismaService } from 'src/database/prisma.service';
 import { Membership, Status } from 'generated/prisma';
+import { NotificationService } from 'src/notification/notification.service';
+import { NotificationGateway } from 'src/notification/notification.gateway';
 
 @Injectable()
 export class EnrollmentService {
   constructor(
-    private prisma : PrismaService
+    private prisma : PrismaService,
+    private readonly notificationService: NotificationService,
+  private readonly notificationGateway: NotificationGateway,
   ){}
   async create(groupId: number, userId: number): Promise<Membership> {
     let group = await this.prisma.group.findUnique({
@@ -63,7 +67,7 @@ export class EnrollmentService {
     
   }
 
-  async update(id: number) {
+  async update(id: number ) {
     let enrollment = await this.prisma.membership.findUnique({
       where: {
         id: id
@@ -79,6 +83,9 @@ export class EnrollmentService {
         status: Status.APPROVED
       }
     });
+ 
+    await this.notificationService.create(enrollment.studentId, `Your enrollment in group ${enrollment.groupId} has been approved.`);
+    this.notificationGateway.sendNotification(enrollment.studentId.toString(), `Your enrollment in group ${enrollment.groupId} has been approved.`);
     return updatedEnrollment;
   }
 
@@ -98,6 +105,8 @@ export class EnrollmentService {
         status: Status.REJECTED
       }
     });
+    await this.notificationService.create(enrollment.studentId, `Your enrollment in group ${enrollment.groupId} has been rejected.`);
+    this.notificationGateway.sendNotification(enrollment.studentId.toString(), `Your enrollment in group ${enrollment.groupId} has been rejected.`);
     return updatedEnrollment;
   }
 }

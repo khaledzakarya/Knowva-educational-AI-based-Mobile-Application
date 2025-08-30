@@ -84,6 +84,9 @@ enum Status {
   REJECTED
 }
 
+
+
+
 model Lesson {
   id        Int      @id @default(autoincrement())
   type      LessonType

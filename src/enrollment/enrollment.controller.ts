@@ -55,8 +55,8 @@ export class EnrollmentController {
    * @param id the id of the enrollment to update
    * @returns the updated enrollment object
    */
-  updateStatusaccept(@Param('id') id: string) {
-    return this.enrollmentService.update(+id);
+  updateStatusaccept(@Param('id') id: string ) {
+    return this.enrollmentService.update(+id );
   }
 
   @Patch('reject/:id')

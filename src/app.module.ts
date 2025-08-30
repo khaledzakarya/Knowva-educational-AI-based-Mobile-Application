@@ -9,6 +9,7 @@ import { SubjectModule } from './subject/subject.module';
 import { GroupModule } from './group/group.module';
 import { EnrollmentModule } from './enrollment/enrollment.module';
 import { LessonModule } from './lesson/lesson.module';
+import { NotificationModule } from './notification/notification.module';
 
 import config from './helper/config';
 @Module({
@@ -35,6 +36,7 @@ import config from './helper/config';
     GroupModule,
     EnrollmentModule,
     LessonModule,
+    NotificationModule,
   ],
   controllers: [AppController],
   providers: [AppService],
