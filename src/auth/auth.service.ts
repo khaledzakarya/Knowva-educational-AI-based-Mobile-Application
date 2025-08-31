@@ -145,7 +145,7 @@ export class AuthService {
         }
       }
     });
-    if (!otpToken) throw new Error('Invalid OTP');
+    if (!otpToken) throw new BadRequestException('Invalid OTP');
     await this.prisma.otpToken.deleteMany({
       where: {
         userId: user.id
