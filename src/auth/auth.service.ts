@@ -30,7 +30,7 @@ export class AuthService {
       }
     });
     if (useremail) {
-      throw new Error('Email already exists');
+      throw new BadRequestException('Email already exists');
     }
     if (createAuthDto.password !== createAuthDto.confirmPassword) {
       throw new BadRequestException('Password does not match');
