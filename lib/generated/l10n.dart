@@ -559,6 +559,186 @@ class S {
       args: [],
     );
   }
+
+  /// `Home`
+  String get home {
+    return Intl.message(
+      'Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Exams`
+  String get exams {
+    return Intl.message(
+      'Exams',
+      name: 'exams',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chat`
+  String get chat {
+    return Intl.message(
+      'Chat',
+      name: 'chat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hi Mr, {userName}!`
+  String home_welcome(Object userName) {
+    return Intl.message(
+      'Hi Mr, $userName!',
+      name: 'home_welcome',
+      desc: '',
+      args: [userName],
+    );
+  }
+
+  /// `Ready to inspire your students today?`
+  String get home_welcome_subtitle {
+    return Intl.message(
+      'Ready to inspire your students today?',
+      name: 'home_welcome_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Classes`
+  String get classes {
+    return Intl.message(
+      'Classes',
+      name: 'classes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Students`
+  String get students {
+    return Intl.message(
+      'Students',
+      name: 'students',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Materials`
+  String get materials {
+    return Intl.message(
+      'Materials',
+      name: 'materials',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quick Actions`
+  String get quick_actions {
+    return Intl.message(
+      'Quick Actions',
+      name: 'quick_actions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upcoming`
+  String get upcoming {
+    return Intl.message(
+      'Upcoming',
+      name: 'upcoming',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload Material`
+  String get upload_material {
+    return Intl.message(
+      'Upload Material',
+      name: 'upload_material',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Exam`
+  String get new_exam {
+    return Intl.message(
+      'New Exam',
+      name: 'new_exam',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Manage Students`
+  String get manage_students {
+    return Intl.message(
+      'Manage Students',
+      name: 'manage_students',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Analytics`
+  String get analytics {
+    return Intl.message(
+      'Analytics',
+      name: 'analytics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `AI Suggestions`
+  String get ai_suggestions {
+    return Intl.message(
+      'AI Suggestions',
+      name: 'ai_suggestions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `40% of students struggled in Exam last week.`
+  String get ai_suggest {
+    return Intl.message(
+      '40% of students struggled in Exam last week.',
+      name: 'ai_suggest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Make a revision on the last lesson.`
+  String get ai_suggest_detail {
+    return Intl.message(
+      'Make a revision on the last lesson.',
+      name: 'ai_suggest_detail',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

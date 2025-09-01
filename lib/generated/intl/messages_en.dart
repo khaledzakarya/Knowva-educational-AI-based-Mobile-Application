@@ -20,18 +20,29 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(userName) => "Hi Mr, ${userName}!";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Accept_our": MessageLookupByLibrary.simpleMessage("Accept our"),
+        "ai_suggest": MessageLookupByLibrary.simpleMessage(
+            "40% of students struggled in Exam last week."),
+        "ai_suggest_detail": MessageLookupByLibrary.simpleMessage(
+            "Make a revision on the last lesson."),
+        "ai_suggestions":
+            MessageLookupByLibrary.simpleMessage("AI Suggestions"),
         "already_have_account":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "analytics": MessageLookupByLibrary.simpleMessage("Analytics"),
         "and": MessageLookupByLibrary.simpleMessage("and"),
         "button_next": MessageLookupByLibrary.simpleMessage("Next"),
         "button_start": MessageLookupByLibrary.simpleMessage("Start now"),
+        "chat": MessageLookupByLibrary.simpleMessage("Chat"),
         "choose_role_subtitle": MessageLookupByLibrary.simpleMessage(
             "choose the role you want to continue your journey with."),
         "choose_your_role":
             MessageLookupByLibrary.simpleMessage("Choose your role"),
+        "classes": MessageLookupByLibrary.simpleMessage("Classes"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "continue_text": MessageLookupByLibrary.simpleMessage("Continue"),
@@ -51,12 +62,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter your new password"),
         "enter_new_password_subtitle": MessageLookupByLibrary.simpleMessage(
             "Enter new password to complete the process."),
+        "exams": MessageLookupByLibrary.simpleMessage("Exams"),
         "forget_password_description": MessageLookupByLibrary.simpleMessage(
             "we’ll guide you through a quick and secure process to get you back into your account."),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
         "full_name": MessageLookupByLibrary.simpleMessage("Full Name"),
         "get_started": MessageLookupByLibrary.simpleMessage("Get Started!"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "home_welcome": m0,
+        "home_welcome_subtitle": MessageLookupByLibrary.simpleMessage(
+            "Ready to inspire your students today?"),
         "language_ar": MessageLookupByLibrary.simpleMessage("AR"),
         "language_en": MessageLookupByLibrary.simpleMessage("EN"),
         "login": MessageLookupByLibrary.simpleMessage("Log in"),
@@ -68,6 +84,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_subtitle":
             MessageLookupByLibrary.simpleMessage("Smart teaching starts here."),
         "login_title": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
+        "manage_students":
+            MessageLookupByLibrary.simpleMessage("Manage Students"),
+        "materials": MessageLookupByLibrary.simpleMessage("Materials"),
+        "new_exam": MessageLookupByLibrary.simpleMessage("New Exam"),
         "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
             "Smart teaching starts here save time, teach better, and engage your students like never before."),
         "onboardingDescription2": MessageLookupByLibrary.simpleMessage(
@@ -85,20 +105,26 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "privacy_policy":
             MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+        "quick_actions": MessageLookupByLibrary.simpleMessage("Quick Actions"),
         "remember_me": MessageLookupByLibrary.simpleMessage("Remember me"),
         "reset_password":
             MessageLookupByLibrary.simpleMessage("Reset password"),
         "send_again": MessageLookupByLibrary.simpleMessage("Send again"),
         "send_code": MessageLookupByLibrary.simpleMessage("Send code"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signup": MessageLookupByLibrary.simpleMessage("Sign up"),
         "signup_subtitle": MessageLookupByLibrary.simpleMessage(
             "Enter your information and enjoy smart learning."),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "student": MessageLookupByLibrary.simpleMessage("Student"),
+        "students": MessageLookupByLibrary.simpleMessage("Students"),
         "teacher": MessageLookupByLibrary.simpleMessage("Teacher"),
         "terms": MessageLookupByLibrary.simpleMessage("Terms"),
         "the_password_have_reset_successfully":
             MessageLookupByLibrary.simpleMessage(
-                "The password has been reset successfully.")
+                "The password has been reset successfully."),
+        "upcoming": MessageLookupByLibrary.simpleMessage("Upcoming"),
+        "upload_material":
+            MessageLookupByLibrary.simpleMessage("Upload Material")
       };
 }

@@ -6,8 +6,10 @@ import 'package:knowva/presentation/screens/auth/login_screen.dart';
 import 'package:knowva/presentation/screens/auth/otp_screen.dart';
 import 'package:knowva/presentation/screens/auth/reset_password.dart';
 import 'package:knowva/presentation/screens/auth/signup_screen.dart';
+import 'package:knowva/presentation/screens/navigation_menu.dart';
 import 'package:knowva/presentation/screens/onboarding/onboarding_screen.dart';
 import 'package:knowva/presentation/screens/splash/splash_screen.dart';
+import 'package:knowva/presentation/screens/teatcher/home_screen.dart';
 
 import 'app_routes.dart';
 
@@ -51,6 +53,15 @@ final router = GoRouter(
     GoRoute(
       path: AppRoutes.chooseRole,
       builder: (context, state) => ChooseRoleScreen(),
+    ),
+
+    GoRoute(
+      path: AppRoutes.navigationMenu,
+      builder: (context, state) => NavigationMenu(),
+    ),
+    GoRoute(
+      path: AppRoutes.home,
+      builder: (context, state) => HomeScreen(),
     ),
   ],
 );

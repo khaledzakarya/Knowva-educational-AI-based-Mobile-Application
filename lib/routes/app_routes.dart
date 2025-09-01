@@ -8,4 +8,5 @@ class AppRoutes {
   static const otp = '/otp';
   static const resetPass = '/resetPass';
   static const chooseRole = '/role';
+  static const navigationMenu = '/navigationMenu';
 }

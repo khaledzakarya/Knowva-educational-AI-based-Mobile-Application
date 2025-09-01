@@ -6,7 +6,6 @@ import 'package:knowva/core/theme/custom_themes/chip_theme.dart';
 import 'package:knowva/core/theme/custom_themes/elevation_button_theme.dart';
 import 'package:knowva/core/theme/custom_themes/outlined_buttom_theme.dart';
 import 'package:knowva/core/theme/custom_themes/text_field_theme.dart';
-import 'package:knowva/core/theme/custom_themes/text_theme.dart';
 import 'package:knowva/core/utils/my_colors.dart';
 
 class MyAppTheme {

@@ -29,6 +29,7 @@ class TopCircleDecoration extends StatelessWidget {
       height: baseHeight,
       width: MySizes.screenWidth,
       child: Stack(
+        clipBehavior: Clip.none,
         children: [
           Positioned(
             top: MySizes.screenHeight * 0.037 - shiftUp,

@@ -70,7 +70,9 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: GradientElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.go(AppRoutes.navigationMenu);
+                      },
                       padding: EdgeInsets.symmetric(
                         vertical: MySizes.paddingSm,
                         horizontal: MySizes.paddingMd,

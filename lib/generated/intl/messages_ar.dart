@@ -20,17 +20,28 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
+  static String m0(userName) => "أهلا أستاذ، ${userName}!";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Accept_our": MessageLookupByLibrary.simpleMessage("قبول"),
+        "ai_suggest": MessageLookupByLibrary.simpleMessage(
+            "40% من الطلاب واجهوا صعوبة في الامتحان الأسبوع الماضي."),
+        "ai_suggest_detail": MessageLookupByLibrary.simpleMessage(
+            "قم بعمل مراجعة على الدرس الأخير."),
+        "ai_suggestions":
+            MessageLookupByLibrary.simpleMessage("اقتراحات الذكاء الاصطناعي"),
         "already_have_account":
             MessageLookupByLibrary.simpleMessage("هل لديك حساب بالفعل؟"),
+        "analytics": MessageLookupByLibrary.simpleMessage("التحليلات"),
         "and": MessageLookupByLibrary.simpleMessage("و"),
         "button_next": MessageLookupByLibrary.simpleMessage("التالي"),
         "button_start": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
+        "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
         "choose_role_subtitle": MessageLookupByLibrary.simpleMessage(
             "اختر الدور الذي تريد الاستمرار في رحلتك معه."),
         "choose_your_role": MessageLookupByLibrary.simpleMessage("اختر دورك"),
+        "classes": MessageLookupByLibrary.simpleMessage("الفصول"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
         "continue_text": MessageLookupByLibrary.simpleMessage("استمر"),
@@ -50,12 +61,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور الجديدة"),
         "enter_new_password_subtitle": MessageLookupByLibrary.simpleMessage(
             "أدخل كلمة المرور الجديدة لإكمال العملية."),
+        "exams": MessageLookupByLibrary.simpleMessage("الامتحانات"),
         "forget_password_description": MessageLookupByLibrary.simpleMessage(
             "سنرشدك خلال عملية سريعة وآمنة لإعادة الدخول إلى حسابك."),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "full_name": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
         "get_started": MessageLookupByLibrary.simpleMessage("ابدأ الآن!"),
+        "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+        "home_welcome": m0,
+        "home_welcome_subtitle": MessageLookupByLibrary.simpleMessage(
+            "هل أنت مستعد لإلهام طلابك اليوم؟"),
         "language_ar": MessageLookupByLibrary.simpleMessage("Ar"),
         "language_en": MessageLookupByLibrary.simpleMessage("En"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
@@ -67,6 +83,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_subtitle":
             MessageLookupByLibrary.simpleMessage("التدريس الذكي يبدأ من هنا."),
         "login_title": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك!"),
+        "manage_students": MessageLookupByLibrary.simpleMessage("إدارة الطلاب"),
+        "materials": MessageLookupByLibrary.simpleMessage("المواد"),
+        "new_exam": MessageLookupByLibrary.simpleMessage("امتحان جديد"),
         "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
             "التدريس الذكي يبدأ من هنا،وفر وقتك، طوّر دروسك، وشارك طلابك كما لم يحدث من قبل."),
         "onboardingDescription2": MessageLookupByLibrary.simpleMessage(
@@ -84,20 +103,26 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "privacy_policy":
             MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
+        "quick_actions":
+            MessageLookupByLibrary.simpleMessage("الإجراءات السريعة"),
         "remember_me": MessageLookupByLibrary.simpleMessage("تذكرني"),
         "reset_password":
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
         "send_again": MessageLookupByLibrary.simpleMessage("أرسل مرة أخرى"),
         "send_code": MessageLookupByLibrary.simpleMessage("إرسال الكود"),
+        "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "signup": MessageLookupByLibrary.simpleMessage("سجل الآن"),
         "signup_subtitle": MessageLookupByLibrary.simpleMessage(
             "أدخل معلوماتك واستمتع بالتعلم الذكي."),
         "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
         "student": MessageLookupByLibrary.simpleMessage("طالب"),
+        "students": MessageLookupByLibrary.simpleMessage("الطلاب"),
         "teacher": MessageLookupByLibrary.simpleMessage("معلم"),
         "terms": MessageLookupByLibrary.simpleMessage("الشروط"),
         "the_password_have_reset_successfully":
             MessageLookupByLibrary.simpleMessage(
-                "تم إعادة تعيين كلمة المرور بنجاح.")
+                "تم إعادة تعيين كلمة المرور بنجاح."),
+        "upcoming": MessageLookupByLibrary.simpleMessage("القادم"),
+        "upload_material": MessageLookupByLibrary.simpleMessage("رفع المواد")
       };
 }

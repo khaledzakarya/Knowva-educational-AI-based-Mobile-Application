@@ -23,4 +23,24 @@ class MyImages {
 
   //animations
   static const String successAnimation = 'assets/animations/success.json';
+
+  //banners
+  static const String banner1Light = 'assets/images/banners/banner1_light.svg';
+  static const String banner1Dark = 'assets/images/banners/banner1_dark.svg';
+
+  static const String banner2 = 'assets/images/banners/banner2.svg';
+  static const String banner3 = 'assets/images/banners/banner3.svg';
+
+  //banners
+
+  static const String banner1ArabicLight =
+      'assets/images/banners/banner1_arabic_light.svg';
+
+  static const String banner2Arabic =
+      'assets/images/banners/banner2_arabic.svg';
+  static const String banner3Arabic =
+      'assets/images/banners/banner3_arabic.svg';
+
+  //profile
+  static const String profile = 'assets/images/profile/profile.png';
 }

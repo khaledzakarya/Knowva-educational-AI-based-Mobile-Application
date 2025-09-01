@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:get/state_manager.dart';
 
 class MySizes {
   static late double screenWidth;
   static late double screenHeight;
   static late double scaleFactor;
+  static late bool isTablet;
 
   /// Initialize with context
   static void init(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    screenWidth = size.width;
-    screenHeight = size.height;
+    final oriantaion = MediaQuery.of(context).orientation;
+
+    if (oriantaion == Orientation.landscape) {
+      screenWidth = size.height;
+      screenHeight = size.width;
+    } else {
+      screenWidth = size.width;
+      screenHeight = size.height;
+    }
 
     // Aspect ratio: width / height
     double aspectRatio = screenWidth / screenHeight;
+    isTablet = MediaQuery.of(context).size.width >= 600;
 
     // If the screen is "almost square" , reduce sizes slightly
     scaleFactor = aspectRatio < 1.2 ? 0.8 : 1.0; // 0.8 = reduce 20%
@@ -39,7 +49,8 @@ class MySizes {
   static double get labelSmall => screenWidth * 0.03 * scaleFactor;
 
   /// ---------- ICONS ----------
-  static double get iconLarge => screenWidth * 0.12 * scaleFactor;
+  static double get iconXLarge => screenWidth * 0.12 * scaleFactor;
+  static double get iconLarge => screenWidth * 0.09 * scaleFactor;
   static double get iconMedium => screenWidth * 0.065 * scaleFactor;
   static double get iconSmall => screenWidth * 0.045 * scaleFactor;
 
@@ -55,6 +66,19 @@ class MySizes {
   static double get imageHeightLarge => screenHeight * 0.4 * scaleFactor;
   static double get imageHeightMedium => screenHeight * 0.25 * scaleFactor;
   static double get imageHeightSmall => screenHeight * 0.15 * scaleFactor;
+
+  /// ---------- Containers ----------
+  static double get containerWidthXXLarge => screenWidth * 0.9 * scaleFactor;
+  static double get containerWidthXLarge => screenWidth * 0.8 * scaleFactor;
+  static double get containerWidthLarge => screenWidth * 0.6 * scaleFactor;
+  static double get containerWidthMedium => screenWidth * 0.4 * scaleFactor;
+  static double get containerWidthSmall => screenWidth * 0.2 * scaleFactor;
+
+  static double get containerHeightXXLarge => screenHeight * 0.6 * scaleFactor;
+  static double get containerHeightXLarge => screenHeight * 0.5 * scaleFactor;
+  static double get containerHeightLarge => screenHeight * 0.4 * scaleFactor;
+  static double get containerHeightMedium => screenHeight * 0.25 * scaleFactor;
+  static double get containerHeightSmall => screenHeight * 0.15 * scaleFactor;
 
   /// ---------- SPACING ----------
   static double get spaceXs => screenWidth * 0.02 * scaleFactor;
@@ -101,7 +125,18 @@ class MySizes {
   static double get buttonWidthMd => screenWidth * 0.3 * scaleFactor;
   static double get buttonWidthLg => screenWidth * 0.4 * scaleFactor;
 
+  /// ---------- TILE HEIGHTS ----------
+  static double get tileHeightXs => screenHeight * 0.07 * scaleFactor;
+  static double get tileHeightSm => screenHeight * 0.075 * scaleFactor;
+  static double get tileHeightMd => screenHeight * 0.085 * scaleFactor;
+  static double get tileHeightLg => screenHeight * 0.09 * scaleFactor;
+  static double get tileHeightXl => screenHeight * 0.1 * scaleFactor;
+
   /// ---------- APPBAR HEIGHT ----------
   static double get appBarHeight => screenHeight * 0.09 * scaleFactor;
-}
 
+  /// ---------- NavBar ----------
+  static double get navBarHeight => isTablet
+      ? screenHeight * 0.07 * scaleFactor
+      : screenHeight * 0.08 * scaleFactor;
+}
