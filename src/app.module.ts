@@ -10,6 +10,8 @@ import { GroupModule } from './group/group.module';
 import { EnrollmentModule } from './enrollment/enrollment.module';
 import { LessonModule } from './lesson/lesson.module';
 import { NotificationModule } from './notification/notification.module';
+import { ChatModule } from './chat/chat.module';
+import { ChatModule } from './chat/chat.module';
 
 import config from './helper/config';
 @Module({
@@ -37,6 +39,7 @@ import config from './helper/config';
     EnrollmentModule,
     LessonModule,
     NotificationModule,
+    ChatModule,
   ],
   controllers: [AppController],
   providers: [AppService],

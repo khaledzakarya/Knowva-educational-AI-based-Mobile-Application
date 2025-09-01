@@ -41,6 +41,10 @@ model User {
   StudentAnswer StudentAnswer[]
 
   OtpToken OtpToken[]
+
+  ConversationStudent Conversation[] @relation("StudentConversations")
+
+  ConversationTeacher Conversation[] @relation("TeacherConversations")
 }
 
 enum Role {
@@ -142,21 +146,29 @@ model StudentAnswer {
 }
 
 model Conversation {
-  id        Int      @id @default(autoincrement())
-  subject   Subject  @relation(fields: [subjectId], references: [id])
-  subjectId Int
-  messages  Message[]
+  id          Int       @id @default(autoincrement())
+  student     User      @relation("StudentConversations", fields: [studentId], references: [id])
+  studentId   Int
+  teacher     User      @relation("TeacherConversations", fields: [teacherId], references: [id])
+  teacherId   Int
+  messages    Message[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@unique([studentId, teacherId]) // ensure one conversation per student-teacher pair
+  Subject Subject[]
 }
 
 model Message {
-  id             Int       @id @default(autoincrement())
+  id             Int          @id @default(autoincrement())
   conversation   Conversation @relation(fields: [conversationId], references: [id])
   conversationId Int
-  sender         User      @relation(fields: [senderId], references: [id])
+  sender         User         @relation(fields: [senderId], references: [id])
   senderId       Int
   content        String
-  timestamp      DateTime  @default(now())
+  timestamp      DateTime     @default(now())
 }
+
 
 model Notification {
   id        Int      @id @default(autoincrement())
