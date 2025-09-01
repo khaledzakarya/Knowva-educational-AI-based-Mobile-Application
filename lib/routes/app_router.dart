@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:knowva/presentation/screens/auth/choose_role_screen.dart';
 import 'package:knowva/presentation/screens/auth/forget_password.dart';
 import 'package:knowva/presentation/screens/auth/login_screen.dart';
+import 'package:knowva/presentation/screens/auth/otp_screen.dart';
+import 'package:knowva/presentation/screens/auth/reset_password.dart';
+import 'package:knowva/presentation/screens/auth/signup_screen.dart';
 import 'package:knowva/presentation/screens/onboarding/onboarding_screen.dart';
-import 'package:knowva/presentation/screens/spash/splash_screen.dart';
+import 'package:knowva/presentation/screens/splash/splash_screen.dart';
 
 import 'app_routes.dart';
 
@@ -28,6 +32,25 @@ final router = GoRouter(
       path: AppRoutes.forgetPassword,
       pageBuilder: (context, state) =>
           const MaterialPage(child: ForgetPasswordScreen()),
+    ),
+    GoRoute(
+      path: AppRoutes.otp,
+      pageBuilder: (context, state) => const MaterialPage(child: OTPScreen()),
+    ),
+    GoRoute(
+      path: AppRoutes.resetPass,
+      pageBuilder: (context, state) =>
+          const MaterialPage(child: ResetPasswordScreen()),
+    ),
+    GoRoute(
+      path: AppRoutes.signup,
+      pageBuilder: (context, state) =>
+          const MaterialPage(child: SignupScreen()),
+    ),
+
+    GoRoute(
+      path: AppRoutes.chooseRole,
+      builder: (context, state) => ChooseRoleScreen(),
     ),
   ],
 );

@@ -22,13 +22,44 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Accept_our": MessageLookupByLibrary.simpleMessage("Accept our"),
+        "already_have_account":
+            MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "and": MessageLookupByLibrary.simpleMessage("and"),
         "button_next": MessageLookupByLibrary.simpleMessage("Next"),
         "button_start": MessageLookupByLibrary.simpleMessage("Start now"),
+        "choose_role_subtitle": MessageLookupByLibrary.simpleMessage(
+            "choose the role you want to continue your journey with."),
+        "choose_your_role":
+            MessageLookupByLibrary.simpleMessage("Choose your role"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "continue_text": MessageLookupByLibrary.simpleMessage("Continue"),
+        "didnt_get_code":
+            MessageLookupByLibrary.simpleMessage("Didn\'t get the code?"),
+        "done": MessageLookupByLibrary.simpleMessage("Done"),
+        "dont_worry": MessageLookupByLibrary.simpleMessage("Don\'t worry "),
         "email": MessageLookupByLibrary.simpleMessage("Email address"),
+        "enter_code": MessageLookupByLibrary.simpleMessage("Enter the code"),
+        "enter_code_subtitle": MessageLookupByLibrary.simpleMessage(
+            "Enter the 4-digit code sent to your email address."),
+        "enter_email":
+            MessageLookupByLibrary.simpleMessage("Enter your Email "),
+        "enter_email_subtitle": MessageLookupByLibrary.simpleMessage(
+            "We’ll send you a code to reset your password."),
+        "enter_new_password":
+            MessageLookupByLibrary.simpleMessage("Enter your new password"),
+        "enter_new_password_subtitle": MessageLookupByLibrary.simpleMessage(
+            "Enter new password to complete the process."),
+        "forget_password_description": MessageLookupByLibrary.simpleMessage(
+            "we’ll guide you through a quick and secure process to get you back into your account."),
+        "forgot_password":
+            MessageLookupByLibrary.simpleMessage("Forgot password?"),
+        "full_name": MessageLookupByLibrary.simpleMessage("Full Name"),
+        "get_started": MessageLookupByLibrary.simpleMessage("Get Started!"),
         "language_ar": MessageLookupByLibrary.simpleMessage("AR"),
         "language_en": MessageLookupByLibrary.simpleMessage("EN"),
+        "login": MessageLookupByLibrary.simpleMessage("Log in"),
         "login_button": MessageLookupByLibrary.simpleMessage("Log in"),
         "login_create_account":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
@@ -52,8 +83,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "or_sign_in_with":
             MessageLookupByLibrary.simpleMessage("Or Sign in with"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "privacy_policy":
+            MessageLookupByLibrary.simpleMessage("Privacy Policy"),
         "remember_me": MessageLookupByLibrary.simpleMessage("Remember me"),
+        "reset_password":
+            MessageLookupByLibrary.simpleMessage("Reset password"),
+        "send_again": MessageLookupByLibrary.simpleMessage("Send again"),
+        "send_code": MessageLookupByLibrary.simpleMessage("Send code"),
         "signup": MessageLookupByLibrary.simpleMessage("Sign up"),
-        "skip": MessageLookupByLibrary.simpleMessage("Skip")
+        "signup_subtitle": MessageLookupByLibrary.simpleMessage(
+            "Enter your information and enjoy smart learning."),
+        "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+        "student": MessageLookupByLibrary.simpleMessage("Student"),
+        "teacher": MessageLookupByLibrary.simpleMessage("Teacher"),
+        "terms": MessageLookupByLibrary.simpleMessage("Terms"),
+        "the_password_have_reset_successfully":
+            MessageLookupByLibrary.simpleMessage(
+                "The password has been reset successfully.")
       };
 }

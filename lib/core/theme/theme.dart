@@ -15,7 +15,6 @@ class MyAppTheme {
     useMaterial3: true,
     brightness: Brightness.light,
     primaryColor: MyColors.primaryColor,
-   
     chipTheme: MyChipTheme.lightChipTheme,
     scaffoldBackgroundColor: MyColors.light,
     appBarTheme: MyAppBarTheme.lightAppBarTheme,

@@ -16,8 +16,8 @@ class TopCircleDecoration extends StatelessWidget {
     double baseHeight = isPhone
         ? isSmallPhone
               ? MySizes.screenHeight * 0.21
-              : MySizes.screenHeight * 0.26
-        : MySizes.screenHeight * 0.2;
+              : MySizes.screenHeight * 0.32
+        : MySizes.screenHeight * 0.24;
 
     double shiftUp = isPhone
         ? isSmallPhone

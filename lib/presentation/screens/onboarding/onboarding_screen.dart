@@ -54,11 +54,17 @@ class OnboardingScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SvgPicture.asset(
-                      onboardingData[index].image,
-                      height: MySizes.imageHeightLarge,
-                      width: MySizes.imageWidthLarge,
-                    ),
+                    index == 2
+                        ? Image(
+                            image: AssetImage(MyImages.onboarding3),
+                            height: MySizes.imageHeightXLarge,
+                            width: MySizes.imageWidthXXLarge,
+                          )
+                        : SvgPicture.asset(
+                            onboardingData[index].image,
+                            height: MySizes.imageHeightXLarge,
+                            width: MySizes.imageWidthXLarge,
+                          ),
                     SizedBox(height: MySizes.spaceMd),
                     Text(
                       onboardingData[index].title,
@@ -99,12 +105,12 @@ class OnboardingScreen extends StatelessWidget {
                         S.of(context).button_start,
                         style: Theme.of(context).textTheme.bodyLarge!
                             .apply(color: MyColors.light)
-                            .copyWith(fontSize: MySizes.bodySmall),
+                            .copyWith(fontSize: MySizes.bodyLarge),
                       )
                     : Icon(
                         Icons.arrow_forward_ios,
                         color: MyColors.white,
-                        size: MySizes.iconSmall,
+                        size: MySizes.iconMedium,
                       ),
               ),
             );

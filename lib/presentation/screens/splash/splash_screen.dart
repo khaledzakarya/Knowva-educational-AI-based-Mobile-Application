@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:knowva/core/helpers/helper_functions.dart';
 import 'package:knowva/core/utils/my_images.dart';

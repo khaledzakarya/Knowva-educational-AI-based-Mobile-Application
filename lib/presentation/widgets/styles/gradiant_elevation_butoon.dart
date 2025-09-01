@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:knowva/core/utils/my_colors.dart';
 
 class GradientElevatedButton extends StatelessWidget {
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final Gradient gradientColors;
   final double borderRadius;
   final EdgeInsets padding;
@@ -20,13 +20,19 @@ class GradientElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isEnabled = onPressed != null;
+
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(borderRadius),
-        boxShadow: const [
-          BoxShadow(color: Colors.black45, blurRadius: 6, offset: Offset(2, 4)),
+        boxShadow: [
+          BoxShadow(color: Colors.black26, blurRadius: 6, offset: Offset(2, 4)),
         ],
-        gradient: gradientColors,
+        gradient: isEnabled
+            ? gradientColors
+            : LinearGradient(
+                colors: [Colors.grey.shade500, Colors.grey.shade500],
+              ),
       ),
       child: ElevatedButton(
         onPressed: onPressed,
@@ -38,7 +44,7 @@ class GradientElevatedButton extends StatelessWidget {
           ),
           shadowColor: Colors.transparent,
         ),
-        child: child,
+        child: Opacity(opacity: isEnabled ? 1.0 : 0.6, child: child),
       ),
     );
   }

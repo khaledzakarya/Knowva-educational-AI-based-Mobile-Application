@@ -93,7 +93,7 @@ class _GradientBorderTextFieldState extends State<GradientBorderTextField> {
               suffixIcon: widget.isPassword
                   ? IconButton(
                       icon: Icon(
-                        _obscure ? Iconsax.eye : Iconsax.eye_slash,
+                        !_obscure ? Iconsax.eye : Iconsax.eye_slash,
                         color: MyColors.grey,
                         size: MySizes.iconMedium,
                       ),

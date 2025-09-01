@@ -47,8 +47,7 @@ class ApiErrorHandler {
                   }
 
                   break;
-                case 404:
-                case 403:
+                case 404 :
                   if (error.response!.data['error_type'] != null) {
                     errorDescription = error.response!.data['message'];
                   }

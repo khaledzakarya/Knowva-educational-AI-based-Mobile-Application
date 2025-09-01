@@ -111,32 +111,32 @@ class MyTextTheme {
       bodyLarge: font(
         fontSize: 14.0,
         fontWeight: FontWeight.w500,
-        color: Colors.white,
+        color: Colors.white70,
       ),
       bodyMedium: font(
         fontSize: 14.0,
         fontWeight: FontWeight.normal,
-        color: Colors.white,
+        color: Colors.white70,
       ),
       bodySmall: font(
         fontSize: 14.0,
         fontWeight: FontWeight.w500,
-        color: Colors.white.withValues(alpha: 0.5),
+        color: Colors.white70.withValues(alpha: 0.5),
       ),
       labelLarge: font(
         fontSize: 12.0,
         fontWeight: FontWeight.normal,
-        color: Colors.white,
+        color: Colors.white70,
       ),
       labelMedium: font(
         fontSize: 12.0,
         fontWeight: FontWeight.normal,
-        color: Colors.white.withValues(alpha: 0.5),
+        color: Colors.white70.withValues(alpha: 0.5),
       ),
       labelSmall: font(
         fontSize: 12.0,
         fontWeight: FontWeight.normal,
-        color: Colors.white.withValues(alpha: 0.5),
+        color: Colors.white70.withValues(alpha: 0.5),
       ),
     );
   }

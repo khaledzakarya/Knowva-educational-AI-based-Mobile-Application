@@ -7,6 +7,8 @@ class MyColors {
   static const Color primaryColor = Color(0xFFFFAA19);
   static const Color secondaryColor = Color(0xFF3BA8D1);
 
+  static const Color darkOrange = Color(0xFFF69D3F);
+
   //Gradient Colors
   static const Gradient orangeGradient = LinearGradient(
     begin: Alignment.centerRight,
@@ -17,7 +19,7 @@ class MyColors {
   static const Gradient blueGradient = LinearGradient(
     begin: Alignment.centerRight,
     end: Alignment.centerLeft,
-    colors: [Color(0xff1A73BD), Color(0xff5ADBE4)],
+    colors: [Color(0xff1A73BD), Color.fromRGBO(90, 219, 228, 1)],
   );
 
   static LinearGradient customGradient(MaterialColor color) {
@@ -63,21 +65,25 @@ class MyColors {
   static const Color dark = Color(0xFF4B4C4D);
   static const Color darker = Color(0xFF535455);
 
-
   //Background container Colors
   static const Color lightContainer = Color(0xFFFFFFFF);
-  static Color darkContainer = Colors.white24;
+  static const Color darkContainer = Color(0xff3F4041);
+
+  //Background container Colors
+  static const Color lightNav = Color(0xFF263238);
+  static const Color darkNav = Color(0xff232424);
 
   // Button Colors
   static const Color primaryButton = MyColors.primaryColor;
   static const Color secondaryButton = Color(0xff6c757d);
-  static const Color disabledButton = Color(0xffc4c4c4);
+  static const Color disabledButton = Color.fromARGB(255, 40, 32, 32);
 
-  // //border Colors
-  // static const Color primaryBorder = Color(0xFFD9D9D9);
-  // static const Color primaryBorderDark = Color(0xFF272E3E);
+  //Question  Colors
+  static const Color correct = Color(0xFF10B880);
+  static const Color correctContainer = Color(0xffDCFDE8);
 
-  // static const Color secondaryBorder = Color(0xFFE6E6E6);
+  static const Color wrong = Color(0xFFFF0000);
+  static  Color wrongContainer = Color(0xFFFF0000).withValues(alpha: 0.15);
 
   //Error Colors
   static const Color error = Color(0xFFDC3545);

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:knowva/routes/app_routes.dart';
-import 'package:path/path.dart';
 
 class OnboardingController extends GetxController {
   static OnboardingController get instance => Get.find();

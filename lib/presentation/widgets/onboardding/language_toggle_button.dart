@@ -5,7 +5,6 @@ import 'package:knowva/core/utils/my_sizes.dart';
 import 'package:knowva/di.dart';
 import 'package:knowva/generated/l10n.dart';
 import 'package:knowva/presentation/controllers/language/language_controller.dart';
-import 'package:path/path.dart';
 
 class LanguageToggleButton extends StatelessWidget {
   final double width;
